@@ -39,7 +39,8 @@ export const storeUserData = async () => {
             }
         );
 
-        if (!createdUser.$id) redirect("/sign-in");
+        // if (!createdUser.$id) redirect("/sign-in");
+        return createdUser;
     } catch (error) {
         console.error("Error storing user data:", error);
     }
@@ -86,12 +87,13 @@ export const getUser = async () => {
         const user = await account.get();
         if (!user) return redirect("/sign-in");
 
+        console.log("Called")
         const { documents } = await database.listDocuments(
             appwriteConfig.databaseId,
             appwriteConfig.userCollectionId,
             [
                 Query.equal("accountId", user.$id),
-                Query.select(["name", "email", "imageUrl", "joinedAt", "accountId"]),
+                Query.select(["name", "email", "imageUrl", "joinedAt", "accountId", "status"]),
             ]
         );
 
