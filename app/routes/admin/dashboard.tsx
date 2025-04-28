@@ -55,6 +55,10 @@ export const clientLoader = async () => {
     }
 }
 
+// sentry test needed
+// export async function loader() {
+//     throw new Error("some error thrown in a loader");
+//   }
 
 const Dashboard = ({ loaderData }: Route.ComponentProps) => {
     const user = loaderData.user as User | null;
