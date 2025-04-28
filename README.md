@@ -80,8 +80,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/adrianhajdin/travel-agency-dashboard.git
-cd travel-agency-dashboard
+git clone https://github.com/fhbthenorthstar/Travel-Agency-Dashboard.git
+cd Travel-Agency-Dashboard
 ```
 
 **Installation**
